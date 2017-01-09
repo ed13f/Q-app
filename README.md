@@ -67,6 +67,8 @@ We're going to refactor the routes in this application to follow REST-ful routin
 
 This refactor will involve updating our route handlers to match the conventional request types and paths.  We'll also need to update anywhere the old paths appear:  form actions, links, redirect paths, etc.
 
+*Note:*  Changing the HTML markup could cause inconsistencies in the design.  That's okay.  We may correct the inconsistencies with CSS or ignore them.
+
 
 ## Conclusion
 We've been following conventions for Ruby style, table and class names, etc.  Now we can add conventions for routing to the list.  Why would it be beneficial to follow REST-ful routing conventions?  How would following the conventions affect other developers on our project?

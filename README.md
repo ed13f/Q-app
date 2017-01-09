@@ -41,9 +41,9 @@ end
 
 
 ### Making PUT and DELETE Requests in Sinatra
-There is a browser limitation that we need to work around.  Browsers make GET and POST requests.  In addition to these, we need to make PUT and DELETE requests.
+To follow REST-ful routing conventions we need to make PUT and DELETE requests.  However, there is a browser limitation we need to work around:  browsers only make GET and POST requests.  Clicking a link sends a GET request while submitting a form sends either a GET or POST request, depending on the form's `method` attribute.
 
-We can tell Sinatra to interpret a POST request as a PUT or DELETE request.  We do this by sending a parameter named `_method` along with the other data.  We set the value of this parameter to the name of one of the browser-unsupported request types (i.e., PUT or DELETE).  This can be done in a form by adding a hidden input (see Figure 2).
+To get around this limitation we can tell Sinatra to interpret a POST request as a PUT or DELETE request.  We do this by sending an additional parameter named `_method` whose value matches the type of request we want to make.  If we create a form to make a POST request, we can send the `_method` parameter from a hidden input element. This is demonstrated in Figure 2.
 
 ```HTML
 <form method="post" action="dogs/<%= @dog.id %>">

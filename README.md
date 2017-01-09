@@ -37,7 +37,7 @@ end
 ```
 *Figure 1*. Defining route handlers for PUT and DELETE requests.
 
-We can define route handlers for PUT and DELETE requests the same way that we define them for GET and POST request.  The method we use to define a handler (e.g, `:get` or `:put`) matches the request type, and we pass in the path and a block that says what to do when the request is made.  See how the request types and paths from Table 1 are translated into the route handlers in Figure 1.
+We can define route handlers for PUT and DELETE requests the same way that we define them for GET and POST requests.  The method we use to define a handler (e.g, `:get` or `:put`) matches the request type, and we pass in the path and a block that says what to do when the request is made.  See how the request types and paths from Table 1 are translated into the route handlers in Figure 1.
 
 
 ### Making PUT and DELETE Requests in Sinatra

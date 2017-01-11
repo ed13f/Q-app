@@ -54,6 +54,8 @@ To get around this limitation we can tell Sinatra to interpret a POST request as
 ```
 *Figure 2*. Adding a `_method` parameter with the value `"put"` to a `POST` request made from a form submission.
 
+*Note:*  The use of the `_method` parameter is a work around for browser limitations.  [The Sinatra docs refer to it as a hack][sinatra method_override].  This is not a pattern we should broadly apply.
+
 
 ## Releases
 ### Pre-release:  Set up the Working Application
@@ -75,5 +77,6 @@ We've been following conventions for Ruby style, table and class names, etc.  No
 
 
 [railsguides routes table]: http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions
+[sinatra method_override]: http://www.sinatrarb.com/configuration.html#methodoverride---enabledisable-the-post-method-hack
 [wikipedia crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
 [wikipedia rest]: https://en.wikipedia.org/wiki/Representational_state_transfer

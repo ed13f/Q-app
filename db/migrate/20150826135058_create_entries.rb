@@ -4,7 +4,7 @@ class CreateEntries < ActiveRecord::Migration[5.0]
       t.string :singer, null: false, limit: 64
       t.string :song_title, null: false, limit: 64
 
-      t.timestamps(null: false)
+      t.timestamps
     end
   end
 end

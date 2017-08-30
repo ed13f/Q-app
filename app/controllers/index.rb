@@ -1,3 +1,3 @@
 get '/' do
-  redirect '/entries'
+  redirect '/all-the-entries'
 end

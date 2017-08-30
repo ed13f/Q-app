@@ -14,7 +14,7 @@
   <% end %>
 
 
-  <form method="post" action="/entries">
+  <form method="post" action="create-new-post">
     <label for="singer_name_input">Singer name:</label>
     <input id="singer_name_input" name="entry[singer]" type="text" value="<%= @entry.try(:singer) %>">
 

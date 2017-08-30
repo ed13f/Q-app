@@ -8,12 +8,9 @@
         <span class="song-title"><%= entry.song_title %></span>
 
         <ul class="entry-links">
-          <li class="entry-link"><a href="<%= "entries/#{entry.id}" %>">details</a></li>
-          <li class="entry-link"><a href="<%= "entries/#{entry.id}/edit" %>">edit</a></li>
-          <form method="post" action="entries/<%= entry.id %>">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="delete" class="button">
-          </form>
+          <li class="entry-link"><a href="<%= "show-one-entry/#{entry.id}" %>">details</a></li>
+          <li class="entry-link"><a href="<%= "edit-one-entry-form/#{entry.id}" %>">edit</a></li>
+          <li class="entry-link"><a href="<%= "delete-entry/#{entry.id}" %>">delete</a></li>
         </ul>
       </li>
     <% end %>

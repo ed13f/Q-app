@@ -1,40 +1,40 @@
-get '/entries' do
+get '/all-the-entries' do
   @entries = Entry.order(:created_at)
   erb :'entries/index'
 end
 
-get '/entries/new' do
+get '/new-entry-form' do
   erb :'entries/new'
 end
 
-post '/entries' do
+post '/create-new-post' do
   @entry = Entry.new(params[:entry])
   if @entry.save
-    redirect "/entries/#{@entry.id}"
+    redirect "/show-one-entry/#{@entry.id}"
   else
     @errors = @entry.errors.full_messages
     erb :'entries/new'
   end
 end
 
-get '/entries/:id' do
+get '/show-one-entry/:id' do
   @entry = Entry.find(params[:id])
   erb :'entries/show'
 end
 
-get '/entries/:id/edit' do
+get '/edit-one-entry-form/:id' do
   @entry = Entry.find(params[:id])
   erb :'entries/edit'
 end
 
-put '/entries/:id' do
+post '/update-entry/:id' do
   entry = Entry.find(params[:id])
   entry.update_attributes(params[:entry])
-  redirect "/entries/#{@entry.id}"
+  redirect "/show-one-entry/#{entry.id}"
 end
 
-delete '/entries/:id' do
+get '/delete-entry/:id' do
   entry = Entry.find(params[:id])
   entry.destroy
-  redirect '/entries'
+  redirect '/all-the-entries'
 end

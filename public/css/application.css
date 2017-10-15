@@ -1,3 +1,4 @@
+
 /* *       - https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors
 /* :after  - https://developer.mozilla.org/en-US/docs/Web/CSS/%3A%3Aafter*/
 /* :before - https://developer.mozilla.org/en-US/docs/Web/CSS/%3A%3Abefore */
@@ -15,7 +16,7 @@ body {
   height: 100%;
   color: white;
   background-color: #19ABB5;
-  background: url(../images/karaoke-background-teal.jpg);
+  background: url(../images/sunsetparty.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,22 +96,19 @@ a, a:visited {
   }
 
 .entries {
-  padding: 0;
+  padding: 0% 10% 0% 10%;
   list-style-type: none;
-  border: 1px solid #c8c8c8;
+
   background: #fefefe;
   border-radius: .5em;
+  border: 10px solid #c8c8c8;
 }
 
 .entry {
   padding: 1em 0 2em 0;
   text-align: center;
-  border-bottom: 1px solid #c8c8c8;
+  border-bottom: 1px solid #828c91;
 }
-
-  .entry:last-of-type {
-    border-bottom: none;
-  }
 
 .singer {
   display: block;
@@ -144,8 +142,8 @@ a, a:visited {
 
 .form-wrapper, .content-wrapper {
   background: #fefefe;
-  border-radius: .5em;
-  padding: 2em;
+  padding: 2em 0 2em 0;
+  border-bottom: 1px solid #828c91:;
   color: #5a5a5a;
 }
 
@@ -180,4 +178,31 @@ input {
 
 .errors {
   margin: 0;
+}
+
+.display-none {
+  display:none;
+}
+.details {
+  display: block;
+  margin-bottom: .25em;
+  color: #828c91;
+}
+.show_done{
+  text-decoration: none;
+  background-color: #f7941e;
+  border-radius: .5em;
+  padding: .4em;
+  color: white;
+}
+.show_done:hover {
+     text-decoration:none;
+     cursor:pointer;
+}
+.form_background{
+  padding: 1em 0 2em 0;
+  border-bottom: 1px solid #828c91;
+}
+.new_form_padding {
+  padding:0% 10% 0% 10%;
 }

@@ -3,16 +3,23 @@
 <main role="main">
   <ul class="entries">
     <% @entries.each do |entry| %>
-      <li class="entry">
-        <span class="singer"><%= entry.singer %></span>
-        <span class="song-title"><%= entry.song_title %></span>
+      <div class="entry_container">
+        <li class="entry">
+          <span class="singer"><%= entry.singer %></span>
+          <span class="song-title"><%= entry.song_title %></span>
 
-        <ul class="entry-links">
-          <li class="entry-link"><a href="<%= "show-one-entry/#{entry.id}" %>">details</a></li>
-          <li class="entry-link"><a href="<%= "edit-one-entry-form/#{entry.id}" %>">edit</a></li>
-          <li class="entry-link"><a href="<%= "delete-entry/#{entry.id}" %>">delete</a></li>
-        </ul>
-      </li>
+          <ul id="entry_option" class="entry-links">
+            <div class="2_link_entry">
+            <li class="entry-link"><a id="details" href="<%= "entries/#{entry.id}" %>">Details</a></li>
+            <li class="entry-link"><a id="edit" href="<%= "entries/#{entry.id}/edit" %>">Edit</a></li>
+          </div>
+            <form id="delete" method="post" action="entries/<%= entry.id %>">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="Delete" class="button">
+            </form>
+          </ul>
+        </li>
+      </div>
     <% end %>
   </ul>
 </main>

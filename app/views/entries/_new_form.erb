@@ -1,4 +1,4 @@
-<main class="form-wrapper" role="main">
+<main class="form-wrapper entries new_form_padding" role="main">
   <h1>Sign Up to Karaoke</h1>
   <% if @errors %>
     <div class="errors-wrapper">
@@ -12,13 +12,13 @@
   <% end %>
 
 
-  <form method="post" action="/entries">
+  <form id="new_form" method="post" action="/entries">
     <label for="singer_name_input">Singer name:</label>
     <input id="singer_name_input" name="entry[singer]" type="text" value="<%= @entry.try(:singer) %>">
 
     <label for="song_title_input">Song title:</label>
     <input id="song_title_input" name="entry[song_title]" type="text" value="<%= @entry.try(:song_title) %>">
 
-    <input type="submit" value="Put me on the List!" class="button">
+    <input id="new_form_submit" type="submit" value="Put me on the List!" class="button">
   </form>
 </main>

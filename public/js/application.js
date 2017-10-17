@@ -1,13 +1,5 @@
 $(document).ready(function() {
   var showNewError = false;
-
-  // $('body').animate({opacity: 0}, 5000, function(e) {
-  //     $('body').css('opacity', '1');
-  //   // code to execute after animation ends
-
-  //   // myBox.removeClass('change-size');
-  //   })
-
   $("#sign-up").click(function(event){
     event.preventDefault();
     $button = $(this);
@@ -22,7 +14,8 @@ $(document).ready(function() {
 
   })
   $("body").delegate(".new_form", "submit", function(event){
-    event.preventDefault();
+    debugger
+    event.preventDefault()
     $form = $(this);
     $container = $form.closest("main")
     var singer = $("#singer_name_input").val()

@@ -14,8 +14,7 @@ $(document).ready(function() {
 
   })
   $("body").delegate(".new_form", "submit", function(event){
-    debugger
-    event.preventDefault()
+    event.preventDefault();
     $form = $(this);
     $container = $form.closest("main")
     var singer = $("#singer_name_input").val()

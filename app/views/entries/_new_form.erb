@@ -1,15 +1,5 @@
 <main class="form-wrapper entries new_form_padding" role="main">
   <h1 id="sign-up-header">Sign Up to Karaoke</h1>
-  <% if @errors %>
-    <div class="errors-wrapper">
-      <span>Your entry could not be saved:</span>
-      <ul class="errors">
-        <% @errors.each do |error| %>
-          <li class="error"><%= error %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 
   <form class="new_form" method="post" action="/entries">

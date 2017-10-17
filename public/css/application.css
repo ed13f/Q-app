@@ -206,3 +206,12 @@ input {
 .new_form_padding {
   padding:0% 10% 0% 10%;
 }
+.warning{
+  color:red;
+}
+#add_message{
+  position:  fixed;
+  top:3%;
+  left:40%;
+  right:40%;
+}

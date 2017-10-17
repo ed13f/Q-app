@@ -1,4 +1,13 @@
 $(document).ready(function() {
+  var showNewError = false;
+
+  // $('body').animate({opacity: 0}, 5000, function(e) {
+  //     $('body').css('opacity', '1');
+  //   // code to execute after animation ends
+
+  //   // myBox.removeClass('change-size');
+  //   })
+
   $("#sign-up").click(function(event){
     event.preventDefault();
     $button = $(this);
@@ -9,21 +18,40 @@ $(document).ready(function() {
       $button.hide();
       $("header").append(response)
     });
+
+
   })
-  $("body").delegate("#new_form", "submit", function(event){
+  $("body").delegate(".new_form", "submit", function(event){
     event.preventDefault();
     $form = $(this);
     $container = $form.closest("main")
-    $.ajax({
-      url: $form.attr("action"),
-      method: "post",
-      data: $form.serialize()
-    }).done(function(response){
-      $container.hide();
-      $("#sign-up").show();
-      $(".entries").append(response);
-    })
+    var singer = $("#singer_name_input").val()
+    var song = $("#song_title_input").val()
+    if (singer === "" || song === "") {
+      if (showNewError == false){
+      $("#sign-up-header").append("<p class='warning'>Input fields cannot be left blank.</p>")
+      showNewError = true
+      }
+    } else {
+      $.ajax({
+        url: $form.attr("action"),
+        method: "post",
+        data: $form.serialize()
+      }).done(function(response){
+        showNewError = false
+        $container.remove();
+        $("#sign-up").show();
+        $(".entries").append(response);
+        $("header").append("<h1 id='add_message'>Added to the list</h1>")
+        $('#add_message').animate({opacity: 0}, 5000, function(e) {
+        })
+        setTimeout(function(){
+          $('#add_message').remove();
+        },3000)
+      })
+    }
   });
+
   $("body").delegate("#details", "click", function(event){
     event.preventDefault();
     $button = $(this);

@@ -34,13 +34,13 @@ $(document).ready(function() {
         $container.remove();
         $("#sign-up").show();
         $(".entries").append(response);
-        $("header").append("<h1 id='add_message'>Added to the list</h1>")
-        $('#add_message').animate({opacity: 0}, 5000, function(e) {
-        })
-        setTimeout(function(){
-          $('#add_message').remove();
-        },3000)
-      })
+      //   $("header").append("<h1 id='add_message'>Added to the list</h1>")
+      //   $('#add_message').animate({opacity: 0}, 5000, function(e) {
+      //   })
+      //   setTimeout(function(){
+      //     $('#add_message').remove();
+      //   },3000)
+      // })
     }
   });
 
